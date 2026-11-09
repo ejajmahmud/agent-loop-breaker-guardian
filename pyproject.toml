@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agent-loop-breaker-guardian"
+version = "0.1.0"
+description = "Stateful cycle detector that identifies oscillating code edits, repeated error traces, and infinite self-repair loops"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [
+    {name = "Ejaj Mahmud", email = "dev@ejajmahmud.com"}
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+]
+dependencies = []
+
+[project.scripts]
+agent-loop-breaker-guardian = "agent_loop_breaker_guardian.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["agent_loop_breaker_guardian*"]
